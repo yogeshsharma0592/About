@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* CSS code goes here */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #navbar {
+            background-color: #0c0c02;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        #navbar h1 {
+            font-size: 24px;
+            padding: 10px;
+        }
+        
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        #navbar ul li {
+            padding: 10px;
+        }
+        
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        #navbar ul li a:hover {
+            color: yellow;
+        }
+        
+        #navbar ul li a.current {
+            color: yellow;
+        }
+        
+        #showcase {
+            background-image: url("data:image/jpeg;base64,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");
+            background-size: cover;
+            ");
+ background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #showcase .container {
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        #showcase .showcase-content {
+            background-color: rgba(11, 211, 77, 0.7);
+            color: rgb(200, 233, 14);
+            padding: 20px;
+        }
+        
+        #showcase .showcase-content h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        #showcase .showcase-content p.lead {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        #showcase .showcase-content a {
+            display: inline-block;
+            background-color: rgb(199, 199, 33);
+            color: rgba(223, 62, 33, 0.596);
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        
+        #showcase .showcase-content a:hover {
+            background-color: orange;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <title>Website of Yog Narayan Thakur</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav id="navbar">
+            <div class="container">
+                <h1><a href="#" color="Green">Yog Narayan Thakur</a></h1>
+                <ul>
+                    <li><a href="index.html" class="current">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Showcase Area -->
+        <div id="showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <h2>About Yogesh sharma</h2>
+                    <p class="lead">
+                        Yogesh Sharma, a vibrant individual from Nepal currently in Class 12, harbors a passionate desire to explore the world before turning 30. With a zest for adventure and a thirst for cultural enrichment, Yogesh envisions traversing diverse landscapes, immersing
+                        himself in different traditions, and forging connections with people from various corners of the globe. His dream encapsulates the essence of wanderlust, driven by a curiosity to witness the beauty of the world and gain a profound
+                        understanding of its multifaceted tapestry. As Yogesh navigates through the final years of his academic journey, he eagerly anticipates the day when he can embark on a global odyssey, creating memories and experiences that will
+                        shape his worldview for a lifetime.
+                    </p>
+                    <a href="#">Learn More about Yogesh Sharma</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <p>Designed by Yog Naryan Thakur</p>
+    </footer>
+</body>
+
+</html>
